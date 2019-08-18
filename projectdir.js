@@ -5,8 +5,9 @@ module.exports = function(RED) {
     node.on('input', function(msg) {
       msg.projectdir = null;
       var s = RED.settings;
-      if (s && s.userDir && s.projects && s.projects.activeProject) {
-        msg.projectdir = s.userDir + "/" + s.projects.activeProject;
+      var p = s ? s.get('projects') : null;
+      if (s && s.userDir && p && p.activeProject) {
+        msg.projectdir = s.userDir + "/" + p.activeProject;
       }
       node.send(msg);
     });
