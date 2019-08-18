@@ -1,0 +1,13 @@
+{
+  "name": "node-red-contrib-projectdir",
+  "version": "1.0.0",
+  "description": "Assigns project directory path to msg.projectdir",
+  "main": "projectdir.js",
+  "author": "ianmacs",
+  "license": "CC-PDDC",
+  "node-red" : {
+        "nodes": {
+            "projectdir": "projectdir.js"
+        }
+  }
+}
