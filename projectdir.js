@@ -7,7 +7,7 @@ module.exports = function(RED) {
       var s = RED.settings;
       var p = s ? s.get('projects') : null;
       if (s && s.userDir && p && p.activeProject) {
-        msg.projectdir = s.userDir + "/" + p.activeProject;
+        msg.projectdir = path.join(s.userDir, "projects", p.activeProject);
       }
       node.send(msg);
     });
